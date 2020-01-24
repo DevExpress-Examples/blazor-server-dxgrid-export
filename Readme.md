@@ -5,7 +5,7 @@
 * [ReportHelper.cs](./CS/DxDataGridExportingWithReports/Helpers/ReportHelper.cs)
 * [ExportButtons.razor](./CS/DxDataGridExportingWithReports/Components/ExportButtons.razor)
 
-### DataGrid for Blazor - Server side - How to implement the exporting functionality using DevExpress Reporting tools 
+### DataGrid for Blazor - Server application - How to implement the exporting functionality using DevExpress Reporting tools 
 
 This example illustrates how to use DevExpress Reporting tools to export DxDataGrid's content to different formats (*.pdf*/*.xlsx*/*.docx*) in the Blazor Server applications.
 
