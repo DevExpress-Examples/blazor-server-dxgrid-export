@@ -1,0 +1,41 @@
+﻿@page "/"
+@using DxDataGridExportingWithReports.Data
+@using DxDataGridExportingWithReports.Components
+@using System;
+@using System.Threading
+@using System.Threading.Tasks
+@using DevExtreme.AspNet.Data.ResponseModel
+@using DevExtreme.AspNet.Data
+@using System.Collections.ObjectModel
+@inject WeatherForecastService WeatherForecastService
+@inject IJSRuntime JsRuntime;
+
+@if (forecasts != null) {
+    <DxDataGrid T="@WeatherForecast" CustomData="@LoadOrderData"
+                PageSize="5">
+        <DxDataGridColumn Field="@nameof(WeatherForecast.TemperatureC)" Caption="Temp. (C)" TextAlignment="@DataGridTextAlign.Right"></DxDataGridColumn>
+        <DxDataGridSpinEditColumn Field="@nameof(WeatherForecast.TemperatureF)" Caption="Temp. (F)"></DxDataGridSpinEditColumn>
+        <DxDataGridColumn Field="@nameof(WeatherForecast.Summary)" Caption="Summary"></DxDataGridColumn>
+        <DxDataGridDateEditColumn Field="@nameof(WeatherForecast.Date)" DisplayFormatString="D" EditFormatString="d"></DxDataGridDateEditColumn>
+    </DxDataGrid>
+    <ExportButtons ExportUrlInfo="@exportUrlInfo"></ExportButtons>
+}
+else {
+    <span>Loading...</span>
+}
+@code {
+    private readonly ObservableCollection<Tuple<string, string>> exportUrlInfo = new ObservableCollection<Tuple<string, string>>();
+    WeatherForecast[] forecasts;
+    protected override async Task OnInitializedAsync() {
+        forecasts = await WeatherForecastService.GetForecastAsync();
+    }
+    private string MySiteUrl = "https://localhost:44312/";
+    protected Task<LoadResult> LoadOrderData(DataSourceLoadOptionsBase options, CancellationToken cancellationToken) {
+        exportUrlInfo.Clear();
+        exportUrlInfo.Add(Tuple.Create(options.ConvertToGetRequestUri(MySiteUrl + "exportPdf"), "Export PDF"));
+        exportUrlInfo.Add(Tuple.Create(options.ConvertToGetRequestUri(MySiteUrl + "exportXlsx"), "Export XLSX"));
+        exportUrlInfo.Add(Tuple.Create(options.ConvertToGetRequestUri(MySiteUrl + "exportDocx"), "Export DOCX"));
+
+        return Task.FromResult(DataSourceLoader.Load(forecasts, options));
+    }
+}
