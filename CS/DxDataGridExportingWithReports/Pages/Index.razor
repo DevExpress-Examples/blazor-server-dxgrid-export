@@ -8,6 +8,7 @@
 @using DevExtreme.AspNet.Data
 @using System.Collections.ObjectModel
 @inject WeatherForecastService WeatherForecastService
+@inject NavigationManager NavigationManager
 @inject IJSRuntime JsRuntime;
 
 @if (forecasts != null) {
@@ -29,12 +30,12 @@ else {
     protected override async Task OnInitializedAsync() {
         forecasts = await WeatherForecastService.GetForecastAsync();
     }
-    private string MySiteUrl = "https://localhost:44312/";
     protected Task<LoadResult> LoadOrderData(DataSourceLoadOptionsBase options, CancellationToken cancellationToken) {
+        string baseUri = NavigationManager.BaseUri.ToString();
         exportUrlInfo.Clear();
-        exportUrlInfo.Add(Tuple.Create(options.ConvertToGetRequestUri(MySiteUrl + "exportPdf"), "Export PDF"));
-        exportUrlInfo.Add(Tuple.Create(options.ConvertToGetRequestUri(MySiteUrl + "exportXlsx"), "Export XLSX"));
-        exportUrlInfo.Add(Tuple.Create(options.ConvertToGetRequestUri(MySiteUrl + "exportDocx"), "Export DOCX"));
+        exportUrlInfo.Add(Tuple.Create(options.ConvertToGetRequestUri(baseUri + "exportPdf"), "Export PDF"));
+        exportUrlInfo.Add(Tuple.Create(options.ConvertToGetRequestUri(baseUri + "exportXlsx"), "Export XLSX"));
+        exportUrlInfo.Add(Tuple.Create(options.ConvertToGetRequestUri(baseUri + "exportDocx"), "Export DOCX"));
 
         return Task.FromResult(DataSourceLoader.Load(forecasts, options));
     }
