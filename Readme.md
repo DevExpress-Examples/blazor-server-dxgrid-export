@@ -9,7 +9,6 @@
 
 This example illustrates how to use DevExpress Reporting tools to export DxDataGrid's content to different formats (*.pdf*/*.xlsx*/*.docx*) in the Blazor Server applications.
 
-**Note:** the DevExpress Blazor components are now free-of-charge, but you need a corresponding [DevExpress subscription](https://www.devexpress.com/buy/net/) to use the Reporting tools.
 
 This example demonstrates how to apply the [ExportMiddleware](./CS/DxDataGridExportingWithReports/Helpers/ExportMiddleware.cs) type to the application's request pipeline. Requests are handled via this middleware, and the file of the corresponding type is returned in the response.
 

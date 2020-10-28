@@ -13,11 +13,11 @@
 
 @if (forecasts != null) {
     <DxDataGrid T="@WeatherForecast" CustomData="@LoadOrderData"
-                PageSize="5">
+                PageSize="5" ShowFilterRow="true">
         <DxDataGridColumn Field="@nameof(WeatherForecast.TemperatureC)" Caption="Temp. (C)" TextAlignment="@DataGridTextAlign.Right"></DxDataGridColumn>
         <DxDataGridSpinEditColumn Field="@nameof(WeatherForecast.TemperatureF)" Caption="Temp. (F)"></DxDataGridSpinEditColumn>
         <DxDataGridColumn Field="@nameof(WeatherForecast.Summary)" Caption="Summary"></DxDataGridColumn>
-        <DxDataGridDateEditColumn Field="@nameof(WeatherForecast.Date)" DisplayFormatString="D" EditFormatString="d"></DxDataGridDateEditColumn>
+        <DxDataGridDateEditColumn Field="@nameof(WeatherForecast.Date)" DisplayFormat="D"></DxDataGridDateEditColumn>
     </DxDataGrid>
     <ExportButtons ExportUrlInfo="@exportUrlInfo"></ExportButtons>
 }
