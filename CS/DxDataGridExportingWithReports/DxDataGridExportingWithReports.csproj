@@ -4,7 +4,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="DevExpress.Blazor" Version="20.2.3" />
-    <PackageReference Include="DevExpress.Reporting.Core" Version="20.2.3" />
+    <PackageReference Include="DevExpress.Reporting.Core" Version="20.2.4" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\Reports\" />
