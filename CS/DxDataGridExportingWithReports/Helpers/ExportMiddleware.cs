@@ -51,23 +51,21 @@ namespace DxDataGridExportingWithReports.Helpers
             var loadedData = DataSourceLoader.Load(await weatherForecastService.GetForecastAsync(), dataOptions);
             report.DataSource = loadedData.data.Cast<WeatherForecast>();
             ReportHelper.CreateReport(report, new string[] { "TemperatureC", "TemperatureF", "Summary", "Date" });
-            await new TaskFactory().StartNew(() => {
-                report.CreateDocument();
-                using (MemoryStream fs = new MemoryStream()) {
-                    if (format == pdf)
-                        report.ExportToPdf(fs);
-                    else if (format == xlsx)
-                        report.ExportToXlsx(fs);
-                    else if (format == docx)
-                        report.ExportToDocx(fs);
-                    context.Response.Clear();
-                    context.Response.Headers.Append("Content-Type", "application/" + format);
-                    context.Response.Headers.Append("Content-Transfer-Encoding", "binary");
-                    context.Response.Headers.Append("Content-Disposition", "attachment; filename=ExportedDocument." + format);
-                    context.Response.Body.WriteAsync(fs.ToArray(), 0, fs.ToArray().Length);
-                    return context.Response.CompleteAsync();
-                }
-            });
+            report.CreateDocument();
+            using (MemoryStream fs = new MemoryStream()) {
+                if (format == pdf)
+                    report.ExportToPdf(fs);
+                else if (format == xlsx)
+                    report.ExportToXlsx(fs);
+                else if (format == docx)
+                    report.ExportToDocx(fs);
+                context.Response.Clear();
+                context.Response.Headers.Append("Content-Type", "application/" + format);
+                context.Response.Headers.Append("Content-Transfer-Encoding", "binary");
+                context.Response.Headers.Append("Content-Disposition", "attachment; filename=ExportedDocument." + format);
+                await context.Response.Body.WriteAsync(fs.ToArray(), 0, fs.ToArray().Length);
+                await context.Response.CompleteAsync();
+            }
         }
     }
 }
