@@ -3,8 +3,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.Blazor" Version="20.2.5" />
-    <PackageReference Include="DevExpress.Reporting.Core" Version="20.2.5" />
+    <PackageReference Include="DevExpress.Blazor" Version="20.2.6" />
+    <PackageReference Include="DevExpress.Reporting.Core" Version="20.2.6" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\Reports\" />
