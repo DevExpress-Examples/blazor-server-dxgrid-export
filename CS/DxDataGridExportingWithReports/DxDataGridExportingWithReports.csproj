@@ -3,8 +3,8 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.Blazor" Version="20.2.6" />
-    <PackageReference Include="DevExpress.Reporting.Core" Version="20.2.6" />
+    <PackageReference Include="DevExpress.Blazor" Version="20.2.7" />
+    <PackageReference Include="DevExpress.Reporting.Core" Version="20.2.7" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\Reports\" />
