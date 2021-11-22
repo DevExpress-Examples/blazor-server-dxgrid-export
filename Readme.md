@@ -13,7 +13,7 @@
 
 This example illustrates how to use DevExpress Reporting tools to export Data Grid's content to different file formats (*.pdf*/*.xlsx*/*.docx*) in a Blazor Server application.
 
-[Export a Table from Data Grid to PDF](images/exported-pdf.png)
+![Export a Table from Data Grid to PDF](images/exported-pdf.png)
 
 To export information, apply the [ExportMiddleware](./CS/DxDataGridExportingWithReports/Helpers/ExportMiddleware.cs) type to the application request pipeline. The **ExportMiddleware** handles requests. The response returns the file of the corresponding type.
 
