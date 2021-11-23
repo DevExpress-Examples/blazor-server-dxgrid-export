@@ -40,6 +40,6 @@ Use the [ReportHelper.CreateReport](./CS/DxDataGridExportingWithReports/Helpers/
 
 ## More Examples
 
-[DataGrid for Blazor - Client side - How to implement the exporting functionality using DevExpress Reporting tools](https://github.com/DevExpress-Examples/blazor-webassembly-dxdatagrid-export)
+[DataGrid for Blazor - How to use DevExpress Reporting tools to implement export in a WASM application](https://github.com/DevExpress-Examples/blazor-webassembly-dxdatagrid-export)
 
 [How to use DevExpress Reporting Components in Blazor applications](https://github.com/DevExpress-Examples/how-to-use-reporting-components-in-blazor-applications)
