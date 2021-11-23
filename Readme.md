@@ -3,12 +3,6 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T854755)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-*Files to look at*:
-
-* [Index.razor](./CS/DxDataGridExportingWithReports/Pages/Index.razor)
-* [ExportMiddleware.cs](./CS/DxDataGridExportingWithReports/Helpers/ExportMiddleware.cs)
-* [ReportHelper.cs](./CS/DxDataGridExportingWithReports/Helpers/ReportHelper.cs)
-* [ExportButtons.razor](./CS/DxDataGridExportingWithReports/Components/ExportButtons.razor)
 
 # DataGrid for Blazor - How to use DevExpress Reporting tools to implement export in a server application
 
@@ -32,6 +26,8 @@ Use the [ReportHelper.CreateReport](./CS/DxDataGridExportingWithReports/Helpers/
 * [ExportMiddleware.cs](./CS/DxDataGridExportingWithReports/Helpers/ExportMiddleware.cs)
 * [ReportHelper.cs](./CS/DxDataGridExportingWithReports/Helpers/ReportHelper.cs)
 * [ExportButtons.razor](./CS/DxDataGridExportingWithReports/Components/ExportButtons.razor)
+
+<!-- default file list -->
 
 ## Documentation
 
