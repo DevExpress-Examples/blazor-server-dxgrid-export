@@ -2,10 +2,8 @@
 using System;
 using System.Drawing;
 
-namespace DxDataGridExportingWithReports.Helpers
-{
-    public static class ReportHelper
-    {
+namespace DxDataGridExportingWithReports.Helpers {
+    public static class ReportHelper {
         public static void CreateReport(XtraReport report, string[] fields) {
             PageHeaderBand pageHeader = new PageHeaderBand() { HeightF = 23, Name = "pageHeaderBand" };
             int tableWidth = report.PageWidth - report.Margins.Left - report.Margins.Right;
@@ -32,8 +30,6 @@ namespace DxDataGridExportingWithReports.Helpers
             headerTable.AdjustSize();
             pageHeader.Controls.Add(headerTable);
 
-
-
             DetailBand detail = new DetailBand() { HeightF = 23, Name = "detailBand" };
             XRTable detailTable = XRTable.CreateTable(
                             new Rectangle(0,    // rect X
@@ -42,8 +38,6 @@ namespace DxDataGridExportingWithReports.Helpers
                                             40),        // height
                                             1,          // table row count
                                             0);         // table column count
-
-
 
             detailTable.Width = tableWidth;
             detailTable.Rows.FirstRow.Width = tableWidth;

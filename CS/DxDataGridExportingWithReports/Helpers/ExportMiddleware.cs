@@ -11,10 +11,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Primitives;
 
-namespace DxDataGridExportingWithReports.Helpers
-{
-    public class ExportMiddleware : IMiddleware
-    {
+namespace DxDataGridExportingWithReports.Helpers {
+    public class ExportMiddleware : IMiddleware {
         WeatherForecastService weatherForecastService;
         public ExportMiddleware(WeatherForecastService _weatherForecastService) {
             weatherForecastService = _weatherForecastService;
