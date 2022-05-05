@@ -6,6 +6,8 @@
 
 # DataGrid for Blazor - How to use DevExpress Reporting tools to implement export in a server application
 
+The Data Grid was moved to maintenance support mode. No new features/capabilities will be added to this component. We recommend that you [migrate](https://docs.devexpress.com/Blazor/403162/grid/migrate-from-data-grid-to-grid) to the [Grid](https://docs.devexpress.com/Blazor/403143/grid) component. 
+
 This example illustrates how to use DevExpress Reporting tools to export Data Grid's content to different file formats (*.pdf*/*.xlsx*/*.docx*) in a Blazor Server application.
 
 ![Export a Table from Data Grid to PDF](images/exported-pdf.png)
@@ -14,9 +16,7 @@ To export information, apply the [ExportMiddleware](./CS/DxDataGridExportingWith
 
 The [ExportButtons](./CS/DxDataGridExportingWithReports/Components/ExportButtons.razor) component contains export buttons. Each export button contains an [URI to this project](./CS/DxDataGridExportingWithReports/Pages/Index.razor#L32), and the URI contains the Data Grid options. The created report contains only data that is visible in the grid after sort and filter operations. The **ExportMiddleware** processes the request with the URI.
 
-
 Use the [ReportHelper.CreateReport](./CS/DxDataGridExportingWithReports/Helpers/ReportHelper.cs#L9) method with the [ExportToPdf(String)](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport.ExportToPdf(System.String-DevExpress.XtraPrinting.PdfExportOptions))/[ExportToXlsx(Stream)](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport.ExportToXls(System.IO.Stream-DevExpress.XtraPrinting.XlsExportOptions))/[ExportToDocx(Stream)](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport.ExportToDocx(System.IO.Stream-DevExpress.XtraPrinting.DocxExportOptions)) methods to create a report that is exported to the file of the corresponding type.
-
 
 <!-- default file list -->
 
