@@ -1,16 +1,10 @@
-using System;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace DxDataGridExportingWithReports.Data
-{
-    public class WeatherForecastService
-    {
+namespace DxDataGridExportingWithReports.Data {
+    public class WeatherForecastService {
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
-        WeatherForecast[] Forecasts;
+        WeatherForecast[]? Forecasts;
         public Task<WeatherForecast[]> GetForecastAsync() {
             if (Forecasts == null) {
                 var rng = new Random();

@@ -1,6 +1,6 @@
 ﻿@page "/"
+
 @using DxDataGridExportingWithReports.Data
-@using DxDataGridExportingWithReports.Components
 @using System;
 @using System.Threading
 @using System.Threading.Tasks
@@ -26,7 +26,7 @@ else {
 }
 @code {
     private readonly ObservableCollection<Tuple<string, string>> exportUrlInfo = new ObservableCollection<Tuple<string, string>>();
-    WeatherForecast[] forecasts;
+    WeatherForecast[]? forecasts;
     protected override async Task OnInitializedAsync() {
         forecasts = await WeatherForecastService.GetForecastAsync();
     }
@@ -36,7 +36,6 @@ else {
         exportUrlInfo.Add(Tuple.Create(options.ConvertToGetRequestUri(baseUri + "exportPdf"), "Export PDF"));
         exportUrlInfo.Add(Tuple.Create(options.ConvertToGetRequestUri(baseUri + "exportXlsx"), "Export XLSX"));
         exportUrlInfo.Add(Tuple.Create(options.ConvertToGetRequestUri(baseUri + "exportDocx"), "Export DOCX"));
-
         return Task.FromResult(DataSourceLoader.Load(forecasts, options));
     }
 }
