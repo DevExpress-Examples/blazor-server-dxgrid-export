@@ -14,7 +14,7 @@ This example illustrates how to use DevExpress Reporting tools to export Data Gr
 
 To export information, apply the [ExportMiddleware](./CS/DxDataGridExportingWithReports/Helpers/ExportMiddleware.cs) type to the application request pipeline. The **ExportMiddleware** handles requests. The response returns the file of the corresponding type.
 
-The [ExportButtons](./CS/DxDataGridExportingWithReports/Components/ExportButtons.razor) component contains export buttons. Each export button contains an [URI to this project](./CS/DxDataGridExportingWithReports/Pages/Index.razor#L32), and the URI contains the Data Grid options. The created report contains only data that is visible in the grid after sort and filter operations. The **ExportMiddleware** processes the request with the URI.
+The [ExportButtons](./CS/DxDataGridExportingWithReports/Shared/ExportButtons.razor) component contains export buttons. Each export button contains an [URI to this project](./CS/DxDataGridExportingWithReports/Pages/Index.razor#L32), and the URI contains the Data Grid options. The created report contains only data that is visible in the grid after sort and filter operations. The **ExportMiddleware** processes the request with the URI.
 
 Use the [ReportHelper.CreateReport](./CS/DxDataGridExportingWithReports/Helpers/ReportHelper.cs#L9) method with the [ExportToPdf(String)](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport.ExportToPdf(System.String-DevExpress.XtraPrinting.PdfExportOptions))/[ExportToXlsx(Stream)](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport.ExportToXls(System.IO.Stream-DevExpress.XtraPrinting.XlsExportOptions))/[ExportToDocx(Stream)](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport.ExportToDocx(System.IO.Stream-DevExpress.XtraPrinting.DocxExportOptions)) methods to create a report that is exported to the file of the corresponding type.
 
@@ -25,7 +25,7 @@ Use the [ReportHelper.CreateReport](./CS/DxDataGridExportingWithReports/Helpers/
 * [Index.razor](./CS/DxDataGridExportingWithReports/Pages/Index.razor)
 * [ExportMiddleware.cs](./CS/DxDataGridExportingWithReports/Helpers/ExportMiddleware.cs)
 * [ReportHelper.cs](./CS/DxDataGridExportingWithReports/Helpers/ReportHelper.cs)
-* [ExportButtons.razor](./CS/DxDataGridExportingWithReports/Components/ExportButtons.razor)
+* [ExportButtons.razor](./CS/DxDataGridExportingWithReports/Shared/ExportButtons.razor)
 
 <!-- default file list -->
 
