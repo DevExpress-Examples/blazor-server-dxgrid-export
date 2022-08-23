@@ -1,0 +1,78 @@
+﻿@page "/"
+
+@using GridExportingWithReports.Data
+@using System;
+@using System.Threading
+@using System.Threading.Tasks
+@using DevExtreme.AspNet.Data.ResponseModel
+@using DevExtreme.AspNet.Data
+@using System.Collections.ObjectModel
+@inject WeatherForecastService WeatherForecastService
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JsRuntime;
+
+@if (forecasts != null) {
+    <DxGrid Data="@Data"
+        PageSize="5" ShowFilterRow="true">
+        <Columns>
+            <DxGridDataColumn FieldName="@nameof(WeatherForecast.TemperatureC)" Caption="Temp. (C)">
+                <FilterRowCellTemplate>
+                    <DxSpinEdit Value="(int?)context.FilterRowValue"
+                            ValueChanged="(int? v) => context.FilterRowValue = v"
+                            ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Never" />
+                </FilterRowCellTemplate>
+            </DxGridDataColumn>
+            <DxGridDataColumn FieldName="@nameof(WeatherForecast.TemperatureF)" Caption="Temp. (F)">
+                <FilterRowCellTemplate>
+                    <DxSpinEdit Value="(int?)context.FilterRowValue"
+                            ValueChanged="(int? v) => context.FilterRowValue = v"
+                            ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Never" />
+                </FilterRowCellTemplate>
+            </DxGridDataColumn>
+            <DxGridDataColumn FieldName="@nameof(WeatherForecast.Summary)" Caption="Summary"></DxGridDataColumn>
+            <DxGridDataColumn FieldName="@nameof(WeatherForecast.Date)" DisplayFormat="D">
+                <FilterRowCellTemplate>
+                    <DxDateEdit Date="(DateTime?)context.FilterRowValue"
+                            DateChanged="(DateTime? v) => context.FilterRowValue = v"
+                            ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Never" />
+                </FilterRowCellTemplate>
+            </DxGridDataColumn>
+        </Columns>
+    </DxGrid>
+    <p></p>
+    <ExportButtons ExportUrlInfo="@exportUrlInfo"></ExportButtons>
+}
+else {
+    <span>Loading...</span>
+}
+@code {
+    private readonly ObservableCollection<Tuple<string, string>> exportUrlInfo = new ObservableCollection<Tuple<string, string>>();
+    object Data { get; set; }
+    WeatherForecast[]? forecasts;
+    protected override async Task OnInitializedAsync()
+    {
+        forecasts = await WeatherForecastService.GetForecastAsync();
+        var dataSource = new GridDevExtremeDataSource<WeatherForecast>(forecasts.AsQueryable<WeatherForecast>());
+        dataSource.CustomizeLoadOptions = (loadOptions) =>
+        {
+            if (loadOptions.IsCountQuery == false)
+            {
+                string baseUri = NavigationManager.BaseUri.ToString();
+                exportUrlInfo.Clear();
+                exportUrlInfo.Add(Tuple.Create(loadOptions.ConvertToGetRequestUri(baseUri + "exportPdf"), "Export PDF"));
+                exportUrlInfo.Add(Tuple.Create(loadOptions.ConvertToGetRequestUri(baseUri + "exportXlsx"), "Export XLSX"));
+                exportUrlInfo.Add(Tuple.Create(loadOptions.ConvertToGetRequestUri(baseUri + "exportDocx"), "Export DOCX"));
+            }
+            var t = 0;
+        };
+        Data = dataSource;
+    }
+    protected Task<LoadResult> LoadOrderData(DataSourceLoadOptionsBase options, CancellationToken cancellationToken) {
+        string baseUri = NavigationManager.BaseUri.ToString();
+        exportUrlInfo.Clear();
+        exportUrlInfo.Add(Tuple.Create(options.ConvertToGetRequestUri(baseUri + "exportPdf"), "Export PDF"));
+        exportUrlInfo.Add(Tuple.Create(options.ConvertToGetRequestUri(baseUri + "exportXlsx"), "Export XLSX"));
+        exportUrlInfo.Add(Tuple.Create(options.ConvertToGetRequestUri(baseUri + "exportDocx"), "Export DOCX"));
+        return Task.FromResult(DataSourceLoader.Load(forecasts, options));
+    }
+}
