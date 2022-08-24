@@ -10,6 +10,8 @@ This example demonstrates how to use DevExpress Reporting tools to export [Blazo
 
 ![Exported PDF](images/exported-pdf.png)
 
+The `DxGrid` component is bound to an [IQueryable<T>](https://docs.microsoft.com/en-us/dotnet/api/system.linq.iqueryable-1) data collection (use the [GridDevExtremeDataSource](https://docs.devexpress.com/Blazor/DevExpress.Blazor.GridDevExtremeDataSource-1)]. The [CustomizeLoadOptions](https://docs.devexpress.com/Blazor/DevExpress.Blazor.GridDevExtremeDataSource-1.CustomizeLoadOptions) property is used to obtain information about the grid's state.
+
 To export information, apply the [ExportMiddleware](./CS/GridExportingWithReports/Helpers/ExportMiddleware.cs) type to the application request pipeline. The **ExportMiddleware** handles requests. The response returns the file of the corresponding type.
 
 The [ExportButtons](./CS/GridExportingWithReports/Shared/ExportButtons.razor) component contains export buttons. Each export button contains an [URI to this project](./CS/GridExportingWithReports/Pages/Index.razor#L32), and the URI contains the Grid options. The created report contains only data that is visible in the grid after sort and filter operations. The **ExportMiddleware** processes the request with the URI.
