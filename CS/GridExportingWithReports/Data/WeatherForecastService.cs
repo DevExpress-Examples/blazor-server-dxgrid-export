@@ -1,4 +1,4 @@
-namespace DxDataGridExportingWithReports.Data {
+namespace GridExportingWithReports.Data {
     public class WeatherForecastService {
         private static readonly string[] Summaries = new[]
         {

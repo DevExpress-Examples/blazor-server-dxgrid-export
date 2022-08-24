@@ -1,5 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Components.Web
-@namespace DxDataGridExportingWithReports.Pages
+@namespace GridExportingWithReports.Pages
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@
     <link href="_content/DevExpress.Blazor.Themes/blazing-berry.bs5.css" rel="stylesheet" />
 
     <link href="~/css/site.css" rel="stylesheet" />
-    <link href="DxDataGridExportingWithReports.styles.css" rel="stylesheet" />
+    <link href="GridExportingWithReports.styles.css" rel="stylesheet" />
     <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
 </head>
 <body>
@@ -21,7 +21,7 @@
     }
     @if(isIEOrEdgeLegacy)
     {
-        <component type="typeof(DxDataGridExportingWithReports.Shared.BrowserNotSupported)" render-mode="Static" />
+        <component type="typeof(GridExportingWithReports.Shared.BrowserNotSupported)" render-mode="Static" />
     }
     else
     {

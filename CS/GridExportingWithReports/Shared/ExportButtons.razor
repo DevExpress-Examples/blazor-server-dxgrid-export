@@ -1,6 +1,6 @@
 ﻿@using System.Collections.ObjectModel
 @foreach (Tuple<string, string> urlInfo in ExportUrlInfo) {
-    <a href="@urlInfo.Item1" download target="_blank" style="padding-right: 2px;">@urlInfo.Item2</a>
+    <a href="@urlInfo.Item1" download target="_blank" style="padding-right: 2px;">@urlInfo.Item2</a><p/>
 }
 
 @code {

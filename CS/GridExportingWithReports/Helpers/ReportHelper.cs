@@ -2,7 +2,7 @@
 using System;
 using System.Drawing;
 
-namespace DxDataGridExportingWithReports.Helpers {
+namespace GridExportingWithReports.Helpers {
     public class ReportHelper {
         public static void CreateReport(XtraReport report, string[] fields) {
             PageHeaderBand pageHeader = new PageHeaderBand() { HeightF = 23, Name = "pageHeaderBand" };
