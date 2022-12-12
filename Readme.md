@@ -4,11 +4,9 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
 
-# DataGrid for Blazor - How to use DevExpress Reporting tools to implement export in a server application
+# Grid for Blazor - How to use DevExpress Reporting tools to implement export in a server application
 
-The Data Grid was moved to maintenance support mode. No new features/capabilities will be added to this component. We recommend that you [migrate](https://docs.devexpress.com/Blazor/403162/grid/migrate-from-data-grid-to-grid) to the [Grid](https://docs.devexpress.com/Blazor/403143/grid) component. 
-
-This example illustrates how to use DevExpress Reporting tools to export Data Grid's content to different file formats (*.pdf*/*.xlsx*/*.docx*) in a Blazor Server application.
+The [Grid](https://docs.devexpress.com/Blazor/403143/grid) component allows you to [export data](https://demos.devexpress.com/blazor/Grid/Export/DataAwareExport) to XLS, XLSX, and CSV file formats. You can also use DevExpress Reporting tools to implement export to different formats (PDF, XLSX, and DOCX). This example illustrates how to do this in a Blazor Server application.
 
 ![Export a Table from Data Grid to PDF](images/exported-pdf.png)
 
@@ -29,10 +27,10 @@ Use the [ReportHelper.CreateReport](./CS/DxDataGridExportingWithReports/Helpers/
 
 <!-- default file list -->
 
-## Documentation
+## Documentation and Demos
 
 * [XtraReport](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport)
-* [Data Grid: Data Binding](http://docs.devexpress.devx/Blazor/DevExpress.Blazor.DxDataGrid-1.Data)
+* [Grid - Export Data](https://demos.devexpress.com/blazor/Grid/Export/DataAwareExport)
 
 ## More Examples
 
