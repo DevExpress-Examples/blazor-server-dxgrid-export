@@ -5,7 +5,7 @@
 
 # Grid for Blazor - How to use DevExpress Reporting tools to implement export in a server application
 
-This example demonstrates how to use DevExpress Reporting tools to export [Blazor Grid](https://docs.devexpress.com/Blazor/403143/grid) content to different file formats (*.pdf*/*.xlsx*/*.docx*) in a Blazor Server application.
+The [Grid](https://docs.devexpress.com/Blazor/403143/grid) component allows you to [export data](https://demos.devexpress.com/blazor/Grid/Export/DataAwareExport) to XLS, XLSX, and CSV file formats. You can also use DevExpress Reporting tools to implement export to different formats (PDF, XLSX, and DOCX). This example illustrates how to do this in a Blazor Server application.
 
 ![Exported PDF](images/exported-pdf.png)
 
@@ -28,10 +28,10 @@ Use the [ReportHelper.CreateReport](./CS/GridExportingWithReports/Helpers/Report
 
 <!-- default file list -->
 
-## Documentation
+## Documentation and Demos
 
 * [XtraReport](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport)
-* [Grid: Bind to Data](https://docs.devexpress.com/Blazor/403737/grid/bind-to-data)
+* [Grid - Export Data](https://demos.devexpress.com/blazor/Grid/Export/DataAwareExport)
 
 ## More Examples
 
