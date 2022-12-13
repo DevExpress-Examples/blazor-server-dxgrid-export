@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
-using DxDataGridExportingWithReports.Data;
+using GridExportingWithReports.Data;
 using DevExpress.XtraReports.UI;
 using DevExtreme.AspNet.Data;
 using DevExtreme.AspNet.Data.Helpers;
@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Primitives;
 
-namespace DxDataGridExportingWithReports.Helpers {
+namespace GridExportingWithReports.Helpers {
     public class ExportMiddleware : IMiddleware {
         WeatherForecastService weatherForecastService;
         public ExportMiddleware(WeatherForecastService _weatherForecastService) {

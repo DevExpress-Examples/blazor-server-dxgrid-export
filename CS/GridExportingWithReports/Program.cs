@@ -1,5 +1,5 @@
-using DxDataGridExportingWithReports.Data;
-using DxDataGridExportingWithReports.Helpers;
+using GridExportingWithReports.Data;
+using GridExportingWithReports.Helpers;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
