@@ -6,7 +6,7 @@ namespace GridExportingWithReports.Helpers {
     public class ReportHelper {
         public static void CreateReport(XtraReport report, string[] fields) {
             PageHeaderBand pageHeader = new PageHeaderBand() { HeightF = 23, Name = "pageHeaderBand" };
-            int tableWidth = report.PageWidth - report.Margins.Left - report.Margins.Right;
+            int tableWidth = (int)(report.PageWidth - report.Margins.Left - report.Margins.Right);
             XRTable headerTable = XRTable.CreateTable(
                                   new Rectangle(0,    // rect X
                                                 0,          // rect Y
