@@ -32,7 +32,7 @@ Use the [ReportHelper.CreateReport](./CS/DxDataGridExportingWithReports/Helpers/
 ## Documentation
 
 * [XtraReport](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport)
-* [Data Grid: Data Binding](http://docs.devexpress.devx/Blazor/DevExpress.Blazor.DxDataGrid-1.Data)
+* [Data Grid: Data Binding](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxDataGrid-1.Data)
 
 ## More Examples
 
