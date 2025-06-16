@@ -5,11 +5,11 @@
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
 <!-- default badges end -->
 
-# Grid for Blazor - How to Export Data to PDF, XLSX, and DOCX formats in a server application
+# Blazor Grid - How to Export Data to DOCX, HTML, and MHT formats in a server application
 
-The [Grid](https://docs.devexpress.com/Blazor/403143/grid) component allows you to [export data](https://demos.devexpress.com/blazor/Grid/Export/DataAwareExport) to XLS, XLSX, and CSV file formats. You can also use DevExpress Reporting tools to implement export to different formats (PDF, XLSX, and DOCX). This example illustrates how to do this in a Blazor Server application.
+The [Grid](https://docs.devexpress.com/Blazor/403143/grid) component allows you to [export data](https://demos.devexpress.com/blazor/Grid/Export/DataAwareExport) to PDF, XLS, XLSX, and CSV file formats. You can also use DevExpress Reporting tools to implement export to different formats (DOCX, HTML, and MHT). This example illustrates how to do this in a Blazor Server application.
 
-![Exported PDF](images/exported-pdf.png)
+![Exported Docx](images/exported-docx.png)
 
 The `DxGrid` component is bound to an [IQueryable<T>](https://docs.microsoft.com/en-us/dotnet/api/system.linq.iqueryable-1) data collection (use the [GridDevExtremeDataSource](https://docs.devexpress.com/Blazor/DevExpress.Blazor.GridDevExtremeDataSource-1)). The [CustomizeLoadOptions](https://docs.devexpress.com/Blazor/DevExpress.Blazor.GridDevExtremeDataSource-1.CustomizeLoadOptions) property is used to obtain information about the grid's state.
 
@@ -17,7 +17,7 @@ To export information, apply the [ExportMiddleware](./CS/GridExportingWithReport
 
 The [ExportButtons](./CS/GridExportingWithReports/Shared/ExportButtons.razor) component contains export buttons. Each export button contains an [URI to this project](./CS/GridExportingWithReports/Pages/Index.razor#L32), and the URI contains the Grid options. The created report contains only data that is visible in the grid after sort and filter operations. The **ExportMiddleware** processes the request with the URI.
 
-Use the [ReportHelper.CreateReport](./CS/GridExportingWithReports/Helpers/ReportHelper.cs#L9) method with the [ExportToPdf(String)](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport.ExportToPdf(System.String-DevExpress.XtraPrinting.PdfExportOptions))/[ExportToXlsx(Stream)](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport.ExportToXls(System.IO.Stream-DevExpress.XtraPrinting.XlsExportOptions))/[ExportToDocx(Stream)](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport.ExportToDocx(System.IO.Stream-DevExpress.XtraPrinting.DocxExportOptions)) methods to create a report that is exported to the file of the corresponding type.
+Use the [ReportHelper.CreateReport](./CS/GridExportingWithReports/Helpers/ReportHelper.cs#L9) method with the [ExportToDocx(Stream)](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport.ExportToDocx(System.IO.Stream-DevExpress.XtraPrinting.DocxExportOptions))/[ExportToHtml(Stream)](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport.ExportToHtml(System.IO.Stream-DevExpress.XtraPrinting.HtmlExportOptions))/[ExportToMht(String)](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport.ExportToMht(System.String-DevExpress.XtraPrinting.MhtExportOptions)) methods to create a report that is exported to the file of the corresponding type.
 
 <!-- default file list -->
 
@@ -37,9 +37,8 @@ Use the [ReportHelper.CreateReport](./CS/GridExportingWithReports/Helpers/Report
 
 ## More Examples
 
-[Grid for Blazor - How to use DevExpress Reporting tools to implement export in a WASM application](https://github.com/DevExpress-Examples/blazor-webassembly-dxdatagrid-export)
-
-[How to use DevExpress Reporting Components in Blazor applications](https://github.com/DevExpress-Examples/how-to-use-reporting-components-in-blazor-applications)
+* [Grid for Blazor - How to use DevExpress Reporting tools to implement export in a WASM application](https://github.com/DevExpress-Examples/blazor-webassembly-dxdatagrid-export)
+* [How to use DevExpress Reporting Components in Blazor applications](https://github.com/DevExpress-Examples/how-to-use-reporting-components-in-blazor-applications)
 <!-- feedback -->
 ## Does this example address your development requirements/objectives?
 

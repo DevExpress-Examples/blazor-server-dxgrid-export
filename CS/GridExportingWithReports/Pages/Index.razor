@@ -41,9 +41,9 @@ else {
             {
                 string baseUri = NavigationManager.BaseUri.ToString();
                 exportUrlInfo.Clear();
-                exportUrlInfo.Add(Tuple.Create(loadOptions.ConvertToGetRequestUri(baseUri + "exportPdf"), "Export PDF"));
-                exportUrlInfo.Add(Tuple.Create(loadOptions.ConvertToGetRequestUri(baseUri + "exportXlsx"), "Export XLSX"));
-                exportUrlInfo.Add(Tuple.Create(loadOptions.ConvertToGetRequestUri(baseUri + "exportDocx"), "Export DOCX"));
+                exportUrlInfo.Add(Tuple.Create(loadOptions.ConvertToGetRequestUri(baseUri + "exportMht"), "Export to MHT"));
+                exportUrlInfo.Add(Tuple.Create(loadOptions.ConvertToGetRequestUri(baseUri + "exportHtml"), "Export to HTML"));
+                exportUrlInfo.Add(Tuple.Create(loadOptions.ConvertToGetRequestUri(baseUri + "exportDocx"), "Export to DOCX"));
             }
             var t = 0;
         };
