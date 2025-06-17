@@ -17,11 +17,11 @@ namespace GridExportingWithReports.Helpers {
             weatherForecastService = _weatherForecastService;
         }
         public Task InvokeAsync(HttpContext context, RequestDelegate next) {
-            if (context.Request.Path.ToString().StartsWith("/exportPdf")) {
-                return ExportResult(pdf, GetOptionsFromQuery(context.Request.QueryString.ToString()), context);
+            if (context.Request.Path.ToString().StartsWith("/exportMht")) {
+                return ExportResult(mht, GetOptionsFromQuery(context.Request.QueryString.ToString()), context);
             }
-            else if (context.Request.Path.ToString().StartsWith("/exportXlsx")) {
-                return ExportResult(xlsx, GetOptionsFromQuery(context.Request.QueryString.ToString()), context);
+            else if (context.Request.Path.ToString().StartsWith("/exportHtml")) {
+                return ExportResult(html, GetOptionsFromQuery(context.Request.QueryString.ToString()), context);
             }
             else if (context.Request.Path.ToString().StartsWith("/exportDocx")) {
                 return ExportResult(docx, GetOptionsFromQuery(context.Request.QueryString.ToString()), context);
@@ -38,8 +38,8 @@ namespace GridExportingWithReports.Helpers {
             });
             return options;
         }
-        private readonly string pdf = "pdf";
-        private readonly string xlsx = "xlsx";
+        private readonly string mht = "mht";
+        private readonly string html = "html";
         private readonly string docx = "docx";
         private async Task ExportResult(string format, DataSourceLoadOptionsBase dataOptions, HttpContext context) {
             XtraReport report = new XtraReport();
@@ -50,10 +50,10 @@ namespace GridExportingWithReports.Helpers {
             ReportHelper.CreateReport(report, new string[] { "TemperatureC", "TemperatureF", "Summary", "Date" });
             report.CreateDocument();
             using (MemoryStream fs = new MemoryStream()) {
-                if (format == pdf)
-                    report.ExportToPdf(fs);
-                else if (format == xlsx)
-                    report.ExportToXlsx(fs);
+                if (format == mht)
+                    report.ExportToMht(fs);
+                else if (format == html)
+                    report.ExportToHtml(fs);
                 else if (format == docx)
                     report.ExportToDocx(fs);
                 context.Response.Clear();

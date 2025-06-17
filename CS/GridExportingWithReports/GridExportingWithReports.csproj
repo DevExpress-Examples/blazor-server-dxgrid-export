@@ -6,8 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.Blazor" Version="24.2.1-alpha-24207" />
-    <PackageReference Include="DevExpress.Reporting.Core" Version="24.2.1-alpha-24207" />
+    <PackageReference Include="DevExpress.Blazor" Version="25.1.3" />
+    <PackageReference Include="DevExpress.Reporting.Core" Version="25.1.3" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\images\" />
